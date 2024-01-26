@@ -1,24 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xY3-kE-gZA">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OutExplore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-yK-zII">
+                                <rect key="frame" x="159" y="388.66666666666669" width="75" height="75"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="v0z-rX-Fub"/>
+                                    <constraint firstAttribute="height" constant="75" id="zQB-dj-3vt"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Map"/>
+                                <connections>
+                                    <action selector="btnOpenMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5E-H7-fKW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jZb-yK-zII" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WWC-bd-9Ov"/>
+                            <constraint firstItem="jZb-yK-zII" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vCZ-ln-217"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aw3-wE-N1z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="886.25954198473278" y="3.5211267605633805"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="NkL-zF-x6y">
+            <objects>
+                <viewController storyboardIdentifier="mapViewStory" id="1iS-Rg-LPs" customClass="MapViewController" customModule="OutExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pii-Q4-oCs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" pitchButtonVisibility="adaptive" showsUserTrackingButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cm-D3-gHz">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic">
+                                    <pointOfInterestFilter key="pointOfInterestFilter">
+                                        <includedCategories>
+                                            <string>aquarium</string>
+                                            <string>amusementPark</string>
+                                            <string>beach</string>
+                                            <string>campground</string>
+                                            <string>marina</string>
+                                            <string>museum</string>
+                                            <string>nationalPark</string>
+                                            <string>park</string>
+                                            <string>playground</string>
+                                            <string>stadium</string>
+                                            <string>winery</string>
+                                            <string>zoo</string>
+                                        </includedCategories>
+                                    </pointOfInterestFilter>
+                                </standardMapConfiguration>
+                                <connections>
+                                    <outlet property="delegate" destination="1iS-Rg-LPs" id="xc0-wo-gPe"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FWr-Es-iOH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0cm-D3-gHz" secondAttribute="bottom" id="6qZ-rV-Chh"/>
+                            <constraint firstItem="0cm-D3-gHz" firstAttribute="top" secondItem="FWr-Es-iOH" secondAttribute="top" id="Bwz-gu-v9Y"/>
+                            <constraint firstItem="0cm-D3-gHz" firstAttribute="leading" secondItem="FWr-Es-iOH" secondAttribute="leading" id="Rnw-Xi-7g7"/>
+                            <constraint firstItem="FWr-Es-iOH" firstAttribute="trailing" secondItem="0cm-D3-gHz" secondAttribute="trailing" id="r6i-2a-Dbf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="0cm-D3-gHz" id="dMa-ed-x0z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6u-i7-Pyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.3358778625955" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mKo-Bl-Wlh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xY3-kE-gZA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QaL-Sa-dwT">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9VI-ba-ON2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upi-SD-0Zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40.458015267175568" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

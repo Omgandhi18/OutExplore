@@ -16,6 +16,7 @@
 		C0B898E62B63D70F00427042 /* OutExploreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B898E52B63D70F00427042 /* OutExploreTests.swift */; };
 		C0B898F02B63D71000427042 /* OutExploreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B898EF2B63D71000427042 /* OutExploreUITests.swift */; };
 		C0B898F22B63D71000427042 /* OutExploreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B898F12B63D71000427042 /* OutExploreUITestsLaunchTests.swift */; };
+		C0B898FF2B63D91400427042 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B898FE2B63D91400427042 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C0B898EB2B63D71000427042 /* OutExploreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutExploreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B898EF2B63D71000427042 /* OutExploreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutExploreUITests.swift; sourceTree = "<group>"; };
 		C0B898F12B63D71000427042 /* OutExploreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutExploreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0B898FE2B63D91400427042 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C0B898D72B63D70F00427042 /* Assets.xcassets */,
 				C0B898D92B63D70F00427042 /* LaunchScreen.storyboard */,
 				C0B898DC2B63D70F00427042 /* Info.plist */,
+				C0B898FE2B63D91400427042 /* MapViewController.swift */,
 			);
 			path = OutExplore;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				C0B898D32B63D70F00427042 /* ViewController.swift in Sources */,
 				C0B898CF2B63D70F00427042 /* AppDelegate.swift in Sources */,
 				C0B898D12B63D70F00427042 /* SceneDelegate.swift in Sources */,
+				C0B898FF2B63D91400427042 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
